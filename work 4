@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class CamelCaseConverter {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Введіть строку: ");
+        String input = scanner.nextLine();
+
+        String[] parts = input.split("[-_]");
+        StringBuilder camelCase = new StringBuilder(parts[0].toLowerCase());
+
+        for (int i = 1; i < parts.length; i++) {
+            camelCase.append(
+                    parts[i].substring(0, 1).toUpperCase()
+                            + parts[i].substring(1).toLowerCase()
+            );
+        }
+
+        System.out.println("CamelCase:");
+        System.out.println(camelCase);
+    }
+}
