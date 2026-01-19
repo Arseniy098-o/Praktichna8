@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class LongestShortestWord {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Введіть строку: ");
+        String input = scanner.nextLine();
+
+        String[] words = input.split("\\s+");
+
+        String longest = words[0];
+        String shortest = words[0];
+
+        for (String word : words) {
+            if (word.length() > longest.length()) {
+                longest = word;
+            }
+            if (word.length() < shortest.length()) {
+                shortest = word;
+            }
+        }
+
+        System.out.println("Найдовше слово: " + longest +
+                " (" + longest.length() + " символів)");
+        System.out.println("Найменше слово: " + shortest +
+                " (" + shortest.length() + " символів)");
+    }
+}
