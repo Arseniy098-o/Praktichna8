@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class PalindromeCheck {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Введіть строку: ");
+        String input = scanner.nextLine();
+
+        String normalized = input.replaceAll("\\s+", "").toLowerCase();
+        String reversed = new StringBuilder(normalized).reverse().toString();
+
+        if (normalized.equals(reversed)) {
+            System.out.println("Строка є паліндромом");
+        } else {
+            System.out.println("Строка не є паліндромом");
+        }
+    }
+}
