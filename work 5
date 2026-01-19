@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class WordCensorship {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        String[] bannedWords = {"badword", "test", "ugly"};
+
+        System.out.print("Введіть текст: ");
+        String text = scanner.nextLine();
+
+        for (String word : bannedWords) {
+            text = text.replaceAll("(?i)" + word, "***");
+        }
+
+        System.out.println("Результат:");
+        System.out.println(text);
+    }
+}
